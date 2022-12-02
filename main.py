@@ -11,10 +11,10 @@ def main():
         initial_sidebar_state='collapsed',
     )
 
-    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>',
-             unsafe_allow_html=True)  # convert radio buttons to horizontal
-    st.markdown(""" <style> #MainMenu {visibility: hidden;} footer {visibility: hidden;} </style> """,
-                unsafe_allow_html=True)
+    # st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>',
+    #          unsafe_allow_html=True)  # convert radio buttons to horizontal
+    # st.markdown(""" <style> #MainMenu {visibility: hidden;} footer {visibility: hidden;} </style> """,
+    #             unsafe_allow_html=True)
     PAGES = {
         'Page_1': Page_1,
         'Page_2': Page_2,
@@ -47,6 +47,6 @@ def main():
 if __name__ == '__main__':
     if runtime.exists():
         main()
-else:
-    sys.argv = ['streamlit', 'run', sys.argv[0]]
-    sys.exit(stcli.main())
+    else:
+        sys.argv = ['streamlit', 'run', sys.argv[0]]
+        sys.exit(stcli.main())

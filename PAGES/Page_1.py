@@ -15,31 +15,21 @@ def app():
 
     if load:
         if file is not None:
-            file_details = {"FileName": file.name, "FileType": file.type}
-            # notify.write(type(file_details['FileName']))
-            # # notify.write(file_details.keys())
-            # # notify.write(file_details.values())
-            # notify.write('before file upload')
-            # time.sleep(2)
-            # def save_uploadedfile(file):
-            #     notify.success('Inside upload')
-            #     with open(os.path.join(path, "files", file.name), "wb") as f:
-            #         f.write(file.getbuffer())
-            #     return notify.success("Saved File:{} to tempDir".format(file.name))
-            #
-            # notify.write('after file upload')
-            # time.sleep(2)
+            try:
+                file_details = {"FileName": file.name, "FileType": file.type}
 
-            if '.csv' in file_details['FileName']:
-                # data = pd.read_csv(file)
-                columns = csv_work(file, file_details)
-                notify.write(type(columns))
+                if '.csv' in file_details['FileName']:
+                    # data = pd.read_csv(file)
+                    columns = csv_work(file, file_details)
+                    # notify.write(type(columns))
 
-            elif '.xlsx' in file_details['FileName']:
-                data = pd.read_excel(file)
-                excel_work(file, file_details)
+                elif '.xlsx' in file_details['FileName']:
+                    data = pd.read_excel(file)
+                    excel_work(file, file_details)
 
 
-            # elif '.json' in file_details['FileName']:
-            #     data = pd.read_json(file)
-            #     json_work(file, file_details)
+                # elif '.json' in file_details['FileName']:
+                #     data = pd.read_json(file)
+                #     json_work(file, file_details)
+            except:
+                pass

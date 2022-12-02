@@ -59,4 +59,4 @@ from st_aggrid import GridOptionsBuilder, AgGrid
 if 'win' in sys.platform:
     path = "C:\\Users\\" + getpass.getuser() + "\\OneDrive - Accenture\\Documents\\Projects\\Workday\\WRT's FIles Versions\\1 Oct - Copy"
 else:
-    path = '/home/pravin/Desktop/1 Oct - Copy'
+    path = '/home/pravin/PycharmProjects/Streamlit_ui'
